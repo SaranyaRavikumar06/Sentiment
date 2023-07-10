@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 def show():
-    with st.sidebar:
+    with st.sidebarpage:
         st.markdown("""
                     # Applications
                     """, unsafe_allow_html = False)
