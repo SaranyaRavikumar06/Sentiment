@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import io
 from io import StringIO
-import modals
+import nlpmodals
 import json
 import numpy as np
 import cv2
@@ -109,7 +109,7 @@ def uploadFile():
             st.error('Your image has a bit-depth less than 24. Please upload an image with a bit-depth of 24.')
             return
         
-        emotions, topEmotion, image = modals.imageEmotion(content)
+        emotions, topEmotion, image = nlpmodals.imageEmotion(content)
 
     else:
         emotions = None
