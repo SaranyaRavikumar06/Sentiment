@@ -1,9 +1,9 @@
 import streamlit as st
-import sidebarpage
+import Sidebarpage
 import textpage
 import imageanalysis
 # st.title("Hello")
-page = sidebarpage.show()
+page = Sidebarpage.show()
 
 if page=="Text":
     textpage.renderPage()
