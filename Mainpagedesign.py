@@ -1,7 +1,7 @@
 import streamlit as st
 import sidebar
 import textPage
-import imagePage
+import imageanalysispage
 # st.title("Hello")
 page = sidebar.show()
 
