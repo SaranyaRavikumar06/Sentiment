@@ -53,8 +53,6 @@ def getSentiments(userText, type):
         
 
 def renderPage():
-    st.title("Sentiment Analysis 😊😐😕😡")
-    components.html("""<hr style="height:3px;border:none;color:#333;background-color:#333; margin-bottom: 10px" /> """)
     # st.markdown("### User Input Text Analysis")
     st.subheader("User Input Text Analysis")
     st.text("Analyzing text data given by the user and find sentiments within it.")
