@@ -6,5 +6,5 @@ import imageanalysis
 page = sidebarpage.show()
 if page=="Text":
     textpage.renderPage()
-else:
+elif page=="Image":
     imageanalysis.renderPage()
