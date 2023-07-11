@@ -65,7 +65,7 @@ def getSentiments(userText, type):
         col3.metric("Result",status1, None)
         st.image(image1, caption=status1)
         
-    elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
+    else:
         emotion1=textEmot(userText)
         col21, col22, col23, col24, col25 = st.columns(5)
         col21.metric("Happy 😊", emotion1['Happy'], None)
