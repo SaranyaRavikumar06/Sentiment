@@ -60,20 +60,18 @@ def getSentiments(userText, type):
         st.image(image, caption=status)
         
     elif('type == Positive/Negative/Neutral -VADER'):
-        negativescore,neutralscore,positivescore,compoundscore = getVaderscore(userText)
-        if(status=="Positive"):
-            image = Image.open('./images/positive.PNG')
-        elif(status == "Negative"):
-            image = Image.open('./images/negative.PNG')
+        compoundscore1,vadermaxscore1,status1 = getVaderscore(userText)
+        if(status1=="Positive"):
+            image1 = Image.open('./images/positive.PNG')
+        elif(status1 == "Negative"):
+            image1 = Image.open('./images/negative.PNG')
         else:
-            image = Image.open('./images/neutral.PNG')
-        col1, col2, col3,col4,col5 = st.columns(5)
-        col1.metric("Positive Score",positivescore , None)
-        col2.metric("Negative Score",negativescore, None)
-        col3.metric("Neutral Score", neutralscore, None)
-        col4.metric("Compound Score",compoundscore, None)
-        col5.metric("Result",status, None)
-        st.image(image, caption=status)
+            image1 = Image.open('./images/neutral.PNG')
+        col1, col2, col3= st.columns(3)
+        col1.metric("Compound Score",compoundscore1, None)
+        col2.metric("VaderMaximum(Positive/Negative) Score",vadermaxscore1 , None)
+        col3.metric("Result",status1, None)
+        st.image(image1, caption=status1)
         
     """   elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
         emotion = dict(te.get_emotion(userText))
