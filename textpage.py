@@ -41,7 +41,10 @@ def getVaderscore(userText):
         return compoundscore, negativescore,"Negative"
     else:
         return compoundscore, neutralscore,"Neutral"
-
+        
+def text2emot(userText):
+    emotion = dict(te.get_emotion(userText))
+    return emotion
 
 def getSentiments(userText, type):
     if(type == 'Positive/Negative/Neutral - TextBlob'):
@@ -73,14 +76,14 @@ def getSentiments(userText, type):
         st.image(image1, caption=status1)
         
     elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
-        emotion = dict(te.get_emotion(userText))
+        emotion1=text2emot(userText)
         col1, col2, col3, col4, col5 = st.columns(5)
-        col1.metric("Happy 😊", emotion['Happy'], None)
-        col2.metric("Sad 😔", emotion['Sad'], None)
-        col3.metric("Angry 😠", emotion['Angry'], None)
-        col4.metric("Fear 😨", emotion['Fear'], None)
-        col5.metric("Surprise 😲", emotion['Surprise'], None)
-        plotPie(list(emotion.keys()), list(emotion.values())) 
+        col1.metric("Happy 😊", emotion1['Happy'], None)
+        col2.metric("Sad 😔", emotion1['Sad'], None)
+        col3.metric("Angry 😠", emotion1['Angry'], None)
+        col4.metric("Fear 😨", emotion1['Fear'], None)
+        col5.metric("Surprise 😲", emotion1['Surprise'], None)
+        plotPie(list(emotion1.keys()), list(emotion1.values())) 
        
         
 
