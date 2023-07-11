@@ -4,6 +4,7 @@ from textblob import TextBlob
 from PIL import Image
 import text2emotion as te
 import plotly.graph_objects as go
+import nltk
 nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
