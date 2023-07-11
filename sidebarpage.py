@@ -5,7 +5,7 @@ from streamlit_option_menu import option_menu
 def show():
     with st.sidebar:
             selected = option_menu(
-            menu_title = "👇Select the type of Sentiment Analytics",
+            menu_title = 👇Select the type of Sentiment Analytics,
             options = ["Text", "Image"], #required
             default_index = 0, 
         )
