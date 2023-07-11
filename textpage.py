@@ -53,7 +53,7 @@ def getSentiments(userText, type):
         
 
 def renderPage():
-      st.subheader("User Input Text Analysis")
+    st.subheader("User Input Text Analysis")
     st.text("Analyzing text data given by the user and find sentiments within it.")
     st.text("")
     userText = st.text_input('User Input', placeholder='Input text HERE')
