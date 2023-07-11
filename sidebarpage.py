@@ -11,16 +11,19 @@ def show():
         )
         return selected
 def add_bg_from_url():
-  st.markdown(
-    """
- <style>
- .sidebar .sidebar-content {
-    background-image: linear-gradient(#2e7bcf,#2e7bcf);
-    color: yellow;
- }
- </style>
- """,
-    unsafe_allow_html=True,
- )
-add_bg_from_url() 
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             #background-image: url("https://cdn.pixabay.com/photo/2019/04/24/11/27/flowers-4151900_960_720.jpg");
+             background: content-box radial-gradient(#FF0000, white);
+             #background-color:aquamarine;
+             background-attachment: fixed;
+             background-size: contain;
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 
+add_bg_from_url() 
