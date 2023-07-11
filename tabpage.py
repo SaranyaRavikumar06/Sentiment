@@ -14,7 +14,17 @@ def show():
         return selected
 """
 def show(): 
-    st.title("Sentiment Analysis 😊😐😕😡")
+    st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://www.example.com/image.jpg");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
+    )
+    st.title("Sentiment Analysis  😊😐😕😡")
     components.html("""<hr border:none;color:#333;background-color:#333" /> """)
-    selected = st.radio( "Select the type of Sentiment Analytics 👇", ("Text", "Image")) 
+    selected = st.radio( "👇Select the type of Sentiment Analytics ", ("Text", "Image")) 
     return selected
