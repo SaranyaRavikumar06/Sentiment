@@ -13,18 +13,12 @@ def show():
         st.info(f"{selected=}")
         return selected
 """
+
 def show(): 
-    st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: url("https://www.example.com/image.jpg");
-    }
-   </style>
-    """,
-    unsafe_allow_html=True
-    )
-    st.title("Sentiment Analysis  😊😐😕😡")
-    components.html("""<hr border:none;color:#333;background-color:#333" /> """)
+    bg = """<div style='background-color:black; padding:13px'>
+              <h1 style='color:white'>Sentiment Analysis  😊😐😕😡</h1>
+       </div>"""
+    st.markdown(bg, unsafe_allow_html=True)
+    #st.title("Sentiment Analysis  😊😐😕😡")
     selected = st.radio( "👇Select the type of Sentiment Analytics ", ("Text", "Image")) 
     return selected
