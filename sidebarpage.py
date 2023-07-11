@@ -1,17 +1,15 @@
 from pickle import FALSE
 import streamlit as st
 from streamlit_option_menu import option_menu
+st.markdown("""
+<style>
+    [data-testid=stSidebar] {
+        background-color: #ff000050;
+    }
+</style>
+""", unsafe_allow_html=True)
 def show():
     with st.sidebar:
-        st.markdown("""
-        <style>
-            .sidebar{
-                background-color: #FF6347;    
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-        )
         selected = option_menu(
             menu_title = None,
             options = ["Text", "Image"], #required
