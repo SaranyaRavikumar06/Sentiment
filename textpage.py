@@ -74,8 +74,8 @@ def getSentiments(userText, type):
         col4.metric("Compound Score",compoundscore, None)
         col5.metric("Result",status, None)
         st.image(image, caption=status)
-       """ 
-    elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
+        
+    """   elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
         emotion = dict(te.get_emotion(userText))
         col1, col2, col3, col4, col5 = st.columns(5)
         col1.metric("Happy 😊", emotion['Happy'], None)
@@ -83,8 +83,8 @@ def getSentiments(userText, type):
         col3.metric("Angry 😠", emotion['Angry'], None)
         col4.metric("Fear 😨", emotion['Fear'], None)
         col5.metric("Surprise 😲", emotion['Surprise'], None)
-        plotPie(list(emotion.keys()), list(emotion.values()))
-        """
+        plotPie(list(emotion.keys()), list(emotion.values())) """
+       
         
 
 def renderPage():
