@@ -8,4 +8,4 @@ def show():
         selected = stx.tab_bar(data=[
             stx.TabBarItemData(id="Text", title="✍️ To Do", description="Tasks to take care of"),
             stx.TabBarItemData(id="Image", title="💔 Overdue", description="Tasks missed out")])
-return selected
+        return selected
