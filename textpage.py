@@ -31,7 +31,7 @@ def getPolarity(userText):
         return polarity, subjectivity, "Negative"
 
 def getVaderscore(userText):
-    vd = SentimentIntensityAnalyzer().polarity_scores(text)
+    vd = SentimentIntensityAnalyzer().polarity_scores(userText)
     compoundscore = vd['compound'] 
     positivescore=vd['pos'] 
     negativescore=vd['neg'] 
