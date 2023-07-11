@@ -50,6 +50,21 @@ def getSentiments(userText, type):
         col2.metric("Subjectivity", subjectivity, None)
         col3.metric("Result", status, None)
         st.image(image, caption=status)
+     elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
+        emotion1=textEmot(userText)
+        col1, col2, col3, col4, col5 = st.columns(5)
+        col1.metric("Happy 😊", emotion1['Happy'], None)
+        col2.metric("Sad 😔", emotion1['Sad'], None)
+        col3.metric("Angry 😠", emotion1['Angry'], None)
+        col4.metric("Fear 😨", emotion1['Fear'], None)
+        col5.metric("Surprise 😲", emotion1['Surprise'], None)
+        print(emotion1)
+        go.Figure(go.Pie(
+        labels = list(emotion1.keys()),
+        values = list(emotion1.values()),
+        hoverinfo = "label+percent",
+        textinfo = "value"
+        ))   
         
 """    elif('type == Positive/Negative/Neutral -VADER'):
         compoundscore1,vadermaxscore1,status1 = getVaderscore(userText)
@@ -64,16 +79,7 @@ def getSentiments(userText, type):
         col2.metric("VaderMaximum(Positive/Negative) Score",vadermaxscore1 , None)
         col3.metric("Result",status1, None)
         st.image(image1, caption=status1)"""
-        
-    else:
-        emotion1=textEmot(userText)
-        col21, col22, col23, col24, col25 = st.columns(5)
-        col21.metric("Happy 😊", emotion1['Happy'], None)
-        col22.metric("Sad 😔", emotion1['Sad'], None)
-        col23.metric("Angry 😠", emotion1['Angry'], None)
-        col24.metric("Fear 😨", emotion1['Fear'], None)
-        col25.metric("Surprise 😲", emotion1['Surprise'], None)
-        
+
        
         
 
