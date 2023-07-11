@@ -15,6 +15,6 @@ def show():
 """
 def show(): 
     st.title("Sentiment Analysis 😊😐😕😡")
-    components.html("""<hr style="height:3px;border:none;color:#333;background-color:#333; margin-bottom: 3px" /> """)
+    components.html("""<hr style="height:1px;border:none;color:#333;background-color:#333; margin-bottom: 3px" /> """)
     selected = st.radio( "Select a tab", ("Text", "Image")) 
     return selected
