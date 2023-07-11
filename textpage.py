@@ -30,6 +30,20 @@ def getPolarity(userText):
     else:
         return polarity, subjectivity, "Negative"
 
+def getvaderscore(userText):
+    vd = SentimentIntensityAnalyzer().polarity_scores(text)
+    compoundscore = vd['compound'] 
+    positivescore=vd['pos'] 
+    negativescore=vd['neg'] 
+    neutralscore=vd['neu'] 
+    if compoundscore>= 0.05 :
+        return   compoundscore, positivescore, "Positive"
+    elif compoundscore<= - 0.05 :
+        return   compoundscore, negativescore, "Negative"
+    else:
+        return   compoundscore, neutralscore, "Neutral"
+
+
 def getSentiments(userText, type):
     if(type == 'Positive/Negative/Neutral - TextBlob'):
         polarity, subjectivity, status = getPolarity(userText)
@@ -44,20 +58,23 @@ def getSentiments(userText, type):
         col2.metric("Subjectivity", subjectivity, None)
         col3.metric("Result", status, None)
         st.image(image, caption=status)
+        
     elif('type == Positive/Negative/Neutral -VADER'):
-        scores = SentimentIntensityAnalyzer().polarity_scores(text)
-        if scores['compound'] >= 0.05 :
+        negativescore,neutralscore,positivescore,compoundscore = getvaderscore(userText)
+        if(status=="Positive"):
             image = Image.open('./images/positive.PNG')
-        elif scores['compound'] <= - 0.05 :
+        elif(status == "Negative"):
             image = Image.open('./images/negative.PNG')
-        else :
+        else:
             image = Image.open('./images/neutral.PNG')
-        col1, col2, col3,col4 = st.columns(4)
-        col1.metric("Positive Score", scores['pos'], None)
-        col2.metric("Negative Score", scores['neg'], None)
-        col3.metric("Neutral Score", scores['neu'], None)
-        col4.metric("Compound Score", scores['compound'], None)
+        col1, col2, col3,col4,col5 = st.columns(5)
+        col1.metric("Positive Score",positivescore , None)
+        col2.metric("Negative Score",negativescore, None)
+        col3.metric("Neutral Score", neutralscore, None)
+        col4.metric("Compound Score",compoundscore, None)
+        col5.metric("Result",status, None)
         st.image(image, caption=status)
+        
     elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
         emotion = dict(te.get_emotion(userText))
         col1, col2, col3, col4, col5 = st.columns(5)
