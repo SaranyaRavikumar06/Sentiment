@@ -4,6 +4,8 @@ from textblob import TextBlob
 from PIL import Image
 import text2emotion as te
 import plotly.graph_objects as go
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+sentiment = SentimentIntensityAnalyzer()
 
 def plotPie(labels, values):
     fig = go.Figure(
@@ -41,6 +43,20 @@ def getSentiments(userText, type):
         col2.metric("Subjectivity", subjectivity, None)
         col3.metric("Result", status, None)
         st.image(image, caption=status)
+    elif('type == Positive/Negative/Neutral -VADER'):
+        scores = SentimentIntensityAnalyzer().polarity_scores(text)
+        if scores['compound'] >= 0.05 :
+            image = Image.open('./images/positive.PNG')
+        elif scores['compound'] <= - 0.05 :
+            image = Image.open('./images/negative.PNG')
+        else :
+            image = Image.open('./images/neutral.PNG')
+        col1, col2, col3,col4 = st.columns(4)
+        col1.metric("Positive Score", scores['pos'], None)
+        col2.metric("Negative Score", scores['neg'], None)
+        col3.metric("Neutral Score", scores['neu'], None)
+        col4.metric("Compound Score", scores['compound'], None)
+        st.image(image, caption=status)
     elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
         emotion = dict(te.get_emotion(userText))
         col1, col2, col3, col4, col5 = st.columns(5)
@@ -60,7 +76,7 @@ def renderPage():
     st.text("")
     type = st.selectbox(
      'Type of analysis',
-     ('Positive/Negative/Neutral - TextBlob', 'Happy/Sad/Angry/Fear/Surprise - text2emotion'))
+     ('Positive/Negative/Neutral - TextBlob','Positive/Negative/Neutral -VADER', 'Happy/Sad/Angry/Fear/Surprise - text2emotion'))
     st.text("")
     if st.button('Predict'):
         if(userText!="" and type!=None):
