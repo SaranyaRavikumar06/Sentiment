@@ -6,7 +6,8 @@ def show():
         st.markdown("""
         <style>
             .sidebar .sidebar-content {
-        background-color: #FF6347;}
+            background-image: linear-gradient(#2e7bcf,#2e7bcf);
+            color: white;}
         </style>
         """,
         unsafe_allow_html=True,
