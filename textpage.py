@@ -54,6 +54,10 @@ def getSentiments(userText, type):
 
 def renderPage():
     # st.markdown("### User Input Text Analysis")
+    bg = """<div style='background-color:black; padding:13px'>
+              <h1 style='color:white'>Sentiment Analysis  😊😐😕😡</h1>
+       </div>"""
+    st.markdown(bg, unsafe_allow_html=True)
     st.subheader("User Input Text Analysis")
     st.text("Analyzing text data given by the user and find sentiments within it.")
     st.text("")
@@ -70,3 +74,20 @@ def renderPage():
                                 <h3 style="color: #0284c7; font-family: Source Sans Pro, sans-serif; font-size: 28px; margin-bottom: 10px; margin-top: 50px;">Result</h3>
                                 """, height=100)
             getSentiments(userText, type)
+
+
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-color:#ff6e40;
+             background-attachment: fixed;
+             background-size: contain;
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url() 
