@@ -152,19 +152,6 @@ def uploadFile():
         
     
 def renderPage():
-   st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-color:#ffc13b;
-             background-attachment: fixed;
-             background-size: contain;
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-    # st.markdown("### User Input Text Analysis")
     st.subheader("Image Analysis")
     st.text("Input an image and let's find sentiments in there.")
     st.text("")
