@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 #nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-
+"""
 def plotPie(labels, values):
     fig = go.Figure(
         go.Pie(
@@ -17,7 +17,7 @@ def plotPie(labels, values):
         textinfo = "value"
     ))
     st.plotly_chart(fig)
-
+"""
     
 def getPolarity(userText):
     tb = TextBlob(userText)
@@ -36,12 +36,12 @@ def getVaderscore(userText):
     positivescore=vd['pos'] 
     negativescore=vd['neg'] 
     neutralscore=vd['neu'] 
-    if compoundscore>= 0.05 :
-        return   compoundscore, positivescore, "Positive"
-    elif compoundscore<= - 0.05 :
-        return   compoundscore, negativescore, "Negative"
+    if compoundscore >= 0.05 :
+        return compoundscore, positivescore,"Positive"
+    elif compoundscore <= - 0.05 :
+        return compoundscore, negativescore,"Negative"
     else:
-        return   compoundscore, neutralscore, "Neutral"
+        return compoundscore, neutralscore,"Neutral"
 
 
 def getSentiments(userText, type):
@@ -93,16 +93,12 @@ def renderPage():
     st.text("")
     userText = st.text_input('User Input', placeholder='Input text HERE')
     st.text("")
-    type = st.selectbox(
-     'Type of analysis',
-     ('Positive/Negative/Neutral - TextBlob','Positive/Negative/Neutral -VADER', 'Happy/Sad/Angry/Fear/Surprise - text2emotion'))
+    type = st.selectbox('Type of analysis',('Positive/Negative/Neutral - TextBlob','Positive/Negative/Neutral -V ADER','Happy/Sad/Angry/Fear/Surprise - text2emotion'))
     st.text("")
     if st.button('Predict'):
         if(userText!="" and type!=None):
             st.text("")
-            st.components.v1.html("""
-                                <h3 style="color: #0284c7; font-family: Source Sans Pro, sans-serif; font-size: 28px; margin-bottom: 10px; margin-top: 50px;">Result</h3>
-                                """, height=100)
+            st.components.v1.html("""<h3 style="color: #0284c7; font-family: Source Sans Pro, sans-serif; font-size: 28px; margin-bottom: 10px; margin-top: 50px;">Result</h3>""", height=100)
             getSentiments(userText,type)
 
 
