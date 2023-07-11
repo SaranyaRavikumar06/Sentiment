@@ -32,7 +32,7 @@ def getVaderscore(userText):
     else:
         return compoundscore, neutralscore,"Neutral"
         
-def text2emot(userText):
+def textEmot(userText):
     emotion = dict(te.get_emotion(userText))
     return emotion
 
@@ -66,7 +66,7 @@ def getSentiments(userText, type):
         st.image(image1, caption=status1)
         
     elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
-        emotion1=text2emot(userText)
+        emotion1=textEmot(userText)
         col1, col2, col3, col4, col5 = st.columns(5)
         col1.metric("Happy 😊", emotion1['Happy'], None)
         col2.metric("Sad 😔", emotion1['Sad'], None)
@@ -89,7 +89,7 @@ def renderPage():
     st.text("")
     userText = st.text_input('User Input', placeholder='Input text HERE')
     st.text("")
-    type = st.selectbox('Type of analysis',('Positive/Negative/Neutral - TextBlob','Positive/Negative/Neutral -V ADER','Happy/Sad/Angry/Fear/Surprise - text2emotion'))
+    type = st.selectbox('Type of analysis',('Positive/Negative/Neutral - TextBlob','Positive/Negative/Neutral -VADER','Happy/Sad/Angry/Fear/Surprise - text2emotion'))
     st.text("")
     if st.button('Predict'):
         if(userText!="" and type!=None):
