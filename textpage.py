@@ -8,10 +8,6 @@ import nltk
 nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-def plotPie(labels, values):
-    fig = 
-    st.plotly_chart(fig)
-    
 def getPolarity(userText):
     tb = TextBlob(userText)
     polarity = round(tb.polarity, 2)
