@@ -9,13 +9,7 @@ nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def plotPie(labels, values):
-    fig = go.Figure(
-        go.Pie(
-        labels = labels,
-        values = values,
-        hoverinfo = "label+percent",
-        textinfo = "value"
-    ))
+    fig = 
     st.plotly_chart(fig)
     
 def getPolarity(userText):
@@ -83,7 +77,13 @@ def getSentiments(userText, type):
         col3.metric("Angry 😠", emotion1['Angry'], None)
         col4.metric("Fear 😨", emotion1['Fear'], None)
         col5.metric("Surprise 😲", emotion1['Surprise'], None)
-        plotPie(list(emotion1.keys()), list(emotion1.values())) 
+        print(emotion1)
+        go.Figure(go.Pie(
+        labels = list(emotion1.keys()),
+        values = list(emotion1.values()),
+        hoverinfo = "label+percent",
+        textinfo = "value"
+        ))
        
         
 
