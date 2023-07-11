@@ -5,9 +5,8 @@ def show():
     with st.sidebar:
         st.markdown("""
         <style>
-            .sidebar a.selected {
-                background-color: #ff0000;
-                color: #00ffff;
+            .sidebar{
+                background-color: #FF6347;    
         }
         </style>
         """,
