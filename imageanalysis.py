@@ -152,8 +152,6 @@ def uploadFile():
         
     
 def renderPage():
-    st.title("Sentiment Analysis 😊😐😕😡")
-    components.html("""<hr style="height:3px;border:none;color:#333;background-color:#333; margin-bottom: 10px" /> """)
     # st.markdown("### User Input Text Analysis")
     st.subheader("Image Analysis")
     st.text("Input an image and let's find sentiments in there.")
