@@ -30,7 +30,7 @@ def getPolarity(userText):
     else:
         return polarity, subjectivity, "Negative"
 
-def getvaderscore(userText):
+def getVaderscore(userText):
     vd = SentimentIntensityAnalyzer().polarity_scores(text)
     compoundscore = vd['compound'] 
     positivescore=vd['pos'] 
@@ -60,7 +60,7 @@ def getSentiments(userText, type):
         st.image(image, caption=status)
         
     elif('type == Positive/Negative/Neutral -VADER'):
-        negativescore,neutralscore,positivescore,compoundscore = getvaderscore(userText)
+        negativescore,neutralscore,positivescore,compoundscore = getVaderscore(userText)
         if(status=="Positive"):
             image = Image.open('./images/positive.PNG')
         elif(status == "Negative"):
@@ -74,7 +74,7 @@ def getSentiments(userText, type):
         col4.metric("Compound Score",compoundscore, None)
         col5.metric("Result",status, None)
         st.image(image, caption=status)
-        
+       """ 
     elif(type == 'Happy/Sad/Angry/Fear/Surprise - text2emotion'):
         emotion = dict(te.get_emotion(userText))
         col1, col2, col3, col4, col5 = st.columns(5)
@@ -84,6 +84,7 @@ def getSentiments(userText, type):
         col4.metric("Fear 😨", emotion['Fear'], None)
         col5.metric("Surprise 😲", emotion['Surprise'], None)
         plotPie(list(emotion.keys()), list(emotion.values()))
+        """
         
 
 def renderPage():
@@ -102,6 +103,6 @@ def renderPage():
             st.components.v1.html("""
                                 <h3 style="color: #0284c7; font-family: Source Sans Pro, sans-serif; font-size: 28px; margin-bottom: 10px; margin-top: 50px;">Result</h3>
                                 """, height=100)
-            getSentiments(userText, type)
+            getSentiments(userText,type)
 
 
