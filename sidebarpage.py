@@ -5,9 +5,10 @@ def show():
     with st.sidebar:
         st.markdown("""
         <style>
-            .sidebar .sidebar-content {
-            background-image: linear-gradient(#FF6347,#FF6347);
-            color: white;}
+            .sidebar a.selected {
+                background-color: #ff0000;
+                color: #00ffff;
+        }
         </style>
         """,
         unsafe_allow_html=True,
