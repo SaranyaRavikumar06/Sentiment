@@ -19,7 +19,16 @@ def getPolarity(userText):
     else:
         return polarity, subjectivity, "Negative"
 
-"""def getVaderscore(userText):
+def plotPie(labels, values):
+    fig = go.Figure(
+        go.Pie(
+        labels = labels,
+        values = values,
+        hoverinfo = "label+percent",
+        textinfo = "value"
+    ))
+    st.plotly_chart(fig)
+def getVaderscore(userText):
     vd = SentimentIntensityAnalyzer().polarity_scores(userText)
     compoundscore = vd['compound'] 
     positivescore=vd['pos'] 
@@ -30,7 +39,7 @@ def getPolarity(userText):
     elif compoundscore <= - 0.05 :
         return compoundscore, negativescore,"Negative"
     else:
-        return compoundscore, neutralscore,"Neutral" """
+        return compoundscore, neutralscore,"Neutral"
         
 def textEmot(userText):
     emotion = dict(te.get_emotion(userText))
@@ -59,14 +68,8 @@ def getSentiments(userText, type):
         col4.metric("Fear 😨", emotion1['Fear'], None)
         col5.metric("Surprise 😲", emotion1['Surprise'], None)
         print(emotion1)
-        go.Figure(go.Pie(
-        labels = list(emotion1.keys()),
-        values = list(emotion1.values()),
-        hoverinfo = "label+percent",
-        textinfo = "value"
-        ))   
-        
-"""    elif('type == Positive/Negative/Neutral -VADER'):
+        plotPie(list(emotion1.keys()), list(emotion1.values()))  
+    elif('type == Positive/Negative/Neutral -VADER'):
         compoundscore1,vadermaxscore1,status1 = getVaderscore(userText)
         if(status1=="Positive"):
             image1 = Image.open('./images/positive.PNG')
@@ -78,7 +81,7 @@ def getSentiments(userText, type):
         col1.metric("Compound Score",compoundscore1, None)
         col2.metric("VaderMaximum(Positive/Negative) Score",vadermaxscore1 , None)
         col3.metric("Result",status1, None)
-        st.image(image1, caption=status1)"""
+        st.image(image1, caption=status1)
 
        
         
