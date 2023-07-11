@@ -4,8 +4,8 @@ import streamlit.components.v1 as components
 #import extra_streamlit_components as stx
 from streamlit_option_menu import option_menu
 def show(): 
-    bg = """<div style='background-color:black; padding:13px'>
-              <h1 style='color:white'>Sentiment Analysis  😊😐😕😡</h1>
+    bg = """<div style='background-color:white; padding:13px'>
+              <h1 style='color:black'>Sentiment Analysis  😊😐😕😡</h1>
        </div>"""
     st.markdown(bg, unsafe_allow_html=True)
    # st.title("Sentiment Analysis  😊😐😕😡")
