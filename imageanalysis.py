@@ -152,6 +152,10 @@ def uploadFile():
         
     
 def renderPage():
+    bg = """<div style='background-color:black; padding:13px'>
+              <h1 style='color:white'>Sentiment Analysis  😊😐😕😡</h1>
+       </div>"""
+    st.markdown(bg, unsafe_allow_html=True)
     # st.markdown("### User Input Text Analysis")
     st.subheader("Image Analysis")
     st.text("Input an image and let's find sentiments in there.")
@@ -162,7 +166,21 @@ def renderPage():
     
     if option=="Upload One":
         uploadFile()
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-color:#ffc13b;
+             background-attachment: fixed;
+             background-size: contain;
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 
+add_bg_from_url() 
         
     
         
