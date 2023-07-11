@@ -4,8 +4,9 @@ from textblob import TextBlob
 from PIL import Image
 import text2emotion as te
 import plotly.graph_objects as go
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-sentiment = SentimentIntensityAnalyzer()
+nltk.download('vader_lexicon')
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
 
 def plotPie(labels, values):
     fig = go.Figure(
