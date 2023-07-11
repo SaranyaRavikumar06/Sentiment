@@ -14,18 +14,3 @@ def show():
             default_index = 0, 
         )
         return selected
-def add_bg_from_url():
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-color:#1e3d59;
-             background-attachment: fixed;
-             background-size: contain;
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-
-add_bg_from_url() 
