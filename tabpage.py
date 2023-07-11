@@ -8,5 +8,6 @@ def show():
               <h1 style='color:white'>Sentiment Analysis  😊😐😕😡</h1>
        </div></body>"""
     st.markdown(bg, unsafe_allow_html=True)
+    st.set_page_config(layout="wide")
     selected = st.radio( "👇Select the type of Sentiment Analytics ", ("Text", "Image")) 
     return selected
