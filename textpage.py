@@ -79,7 +79,7 @@ def getSentiments(userText, type):
         col3.metric("Angry 😠", emotion['Angry'], None)
         col4.metric("Fear 😨", emotion['Fear'], None)
         col5.metric("Surprise 😲", emotion['Surprise'], None)
-        plotPie(list(emotion.keys()), list(emotion.values())) """
+        plotPie(list(emotion.keys()), list(emotion.values())) 
        
         
 
