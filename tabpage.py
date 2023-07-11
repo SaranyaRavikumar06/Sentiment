@@ -15,7 +15,7 @@ def show():
 """
 
 def show(): 
-    bg = """<div style='background-color:black; padding:13px'>
+    bg = """<body bgcolor="#800000"><div style='background-color:black; padding:13px'>
               <h1 style='color:white'>Sentiment Analysis  😊😐😕😡</h1>
        </div>"""
     st.markdown(bg, unsafe_allow_html=True)
