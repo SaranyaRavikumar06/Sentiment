@@ -7,7 +7,6 @@ import plotly.graph_objects as go
 #nltk.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-"""
 def plotPie(labels, values):
     fig = go.Figure(
         go.Pie(
@@ -17,7 +16,6 @@ def plotPie(labels, values):
         textinfo = "value"
     ))
     st.plotly_chart(fig)
-"""
     
 def getPolarity(userText):
     tb = TextBlob(userText)
