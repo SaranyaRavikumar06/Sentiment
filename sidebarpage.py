@@ -11,8 +11,8 @@ def show():
     with st.sidebar:
         selected = option_menu(
             menu_title = "👇Select the type of Sentiment Analytics",
-            options = ["None","Text", "Image"], #required
-            default_index = 0, 
+            options = ["Text", "Image"], #required
+            default_index = None, 
         )
         return selected
 def add_bg_from_url():
