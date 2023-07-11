@@ -13,7 +13,8 @@ def add_bg_from_url():
          <style>
          .stApp {{
              #background-image: url("https://cdn.pixabay.com/photo/2019/04/24/11/27/flowers-4151900_960_720.jpg");
-             background-color:aquamarine;
+             background: content-box radial-gradient(crimson, skyblue);
+             #background-color:aquamarine;
              background-attachment: fixed;
              background-size: contain;
          }}
