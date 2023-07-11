@@ -1,7 +1,11 @@
 from pickle import FALSE
 import streamlit as st
 from streamlit_option_menu import option_menu
-
+bg = """<div style='background-color:black; padding:13px'>
+              <h1 style='color:white'>Sentiment Analysis  😊😐😕😡</h1>
+       </div>"""
+st.markdown(bg, unsafe_allow_html=True)
+#st.title("Sentiment Analysis  😊😐😕😡")
 def show():
     with st.sidebar:
         selected = option_menu(
