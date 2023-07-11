@@ -6,7 +6,7 @@ def show():
         st.markdown("""
         <style>
             .sidebar .sidebar-content {
-        color: #FF6347;}
+        background-color: #FF6347;}
         </style>
         """,
         unsafe_allow_html=True,
