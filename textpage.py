@@ -19,7 +19,7 @@ def getPolarity(userText):
     else:
         return polarity, subjectivity, "Negative"
 
-def getVaderscore(userText):
+"""def getVaderscore(userText):
     vd = SentimentIntensityAnalyzer().polarity_scores(userText)
     compoundscore = vd['compound'] 
     positivescore=vd['pos'] 
@@ -30,7 +30,7 @@ def getVaderscore(userText):
     elif compoundscore <= - 0.05 :
         return compoundscore, negativescore,"Negative"
     else:
-        return compoundscore, neutralscore,"Neutral"
+        return compoundscore, neutralscore,"Neutral" """
         
 def textEmot(userText):
     emotion = dict(te.get_emotion(userText))
@@ -51,7 +51,7 @@ def getSentiments(userText, type):
         col3.metric("Result", status, None)
         st.image(image, caption=status)
         
-    elif('type == Positive/Negative/Neutral -VADER'):
+"""    elif('type == Positive/Negative/Neutral -VADER'):
         compoundscore1,vadermaxscore1,status1 = getVaderscore(userText)
         if(status1=="Positive"):
             image1 = Image.open('./images/positive.PNG')
@@ -63,7 +63,7 @@ def getSentiments(userText, type):
         col1.metric("Compound Score",compoundscore1, None)
         col2.metric("VaderMaximum(Positive/Negative) Score",vadermaxscore1 , None)
         col3.metric("Result",status1, None)
-        st.image(image1, caption=status1)
+        st.image(image1, caption=status1)"""
         
     else:
         emotion1=textEmot(userText)
