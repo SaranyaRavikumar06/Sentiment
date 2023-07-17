@@ -2,6 +2,19 @@ import streamlit as st
 import streamlit.components.v1 as components
 from textblob import TextBlob
 from PIL import Image
+def renderPage():
+    st.subheader("User Input Text Analysis")
+    st.text("Analyzing text data given by the user and find sentiments within it.")
+    st.text("")
+    userText = st.text_input('User Input', placeholder='Input text HERE')
+    st.text("")
+    if st.button('Predict'):
+        if(userText!=""):
+            st.text("")
+            st.components.v1.html("""<h3 style="color: #0284c7; font-family: Source Sans Pro, sans-serif; font-size: 28px; margin-bottom: 10px; margin-top: 50px;">Result</h3>""", height=100)
+            getSentiments(userText)
+
+
 def getPolarity(userText):
     tb = TextBlob(userText)
     polarity = round(tb.polarity, 2)
@@ -27,16 +40,6 @@ def getSentiments(userText):
   col3.metric("Result", status, None)
   st.image(image, caption=status)
 
-def renderPage():
-    st.subheader("User Input Text Analysis")
-    st.text("Analyzing text data given by the user and find sentiments within it.")
-    st.text("")
-    userText = st.text_input('User Input', placeholder='Input text HERE')
-    st.text("")
-    if st.button('Predict'):
-        if(userText!=""):
-            st.text("")
-            st.components.v1.html("""<h3 style="color: #0284c7; font-family: Source Sans Pro, sans-serif; font-size: 28px; margin-bottom: 10px; margin-top: 50px;">Result</h3>""", height=100)
-            getSentiments(userText)
+
 
 
