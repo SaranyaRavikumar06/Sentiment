@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from textblob import TextBlob
 from PIL import Image
-def renderPage():
+def input():
     st.subheader("User Input Text Analysis")
     st.text("Analyzing text data given by the user and find sentiments within it.")
     st.text("")
