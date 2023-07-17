@@ -8,5 +8,5 @@ if page=="TextBlob Analysis":
     textblob.renderPage()
 elif page=="Text2Emotion Analysis":
     texttoemotion.renderPage()
-else:
+elif page=="VADER Sentiment Analysis":
     vader.renderPage()
