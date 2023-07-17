@@ -9,8 +9,8 @@ def show():
     st.markdown(bg, unsafe_allow_html=True)
     with st.sidebar:
         selected = option_menu(
-            menu_title = "👇Select the type of Sentiment Analytics",
-            options = ["Text", "Image"], #required
+            menu_title = "👇Select the type of Machine Learning for Text Sentiment Analysis",
+            options = ["TextBlob Analysis", "Text2Emotion Analysis","VADER Sentiment Analysis"], #required
             default_index = 0, 
         )
         return selected
