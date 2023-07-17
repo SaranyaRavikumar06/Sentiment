@@ -1,7 +1,8 @@
 import streamlit as st
 import sidebarpage
 import textblob
-import imageanalysis
+import texttoemotion
+import vader
 page = sidebarpage.show()
 if page=="TextBlob Analysis":
     textblob.renderPage()
