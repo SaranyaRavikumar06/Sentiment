@@ -7,6 +7,6 @@ page = sidebarpage.show()
 if page=="Text2Emotion Analysis":
     texttoemotion.renderPage() 
 elif page=="TextBlob Analysis":
-    textblob.input()
+    textblob.renderPage()
 elif page=="VADER Sentiment Analysis":
     vader.renderPage()
