@@ -1,12 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 from textblob import TextBlob
-from PIL import Image
-import text2emotion as te
-import plotly.graph_objects as go
-import nltk
-nltk.download('vader_lexicon')
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
 def getPolarity(userText):
     tb = TextBlob(userText)
     polarity = round(tb.polarity, 2)
@@ -34,7 +29,7 @@ def getSentiments(userText):
     
 def renderPage():
     st.subheader("User Input Text Analysis")
-    st.text("Analyzing text data given by the user and find sentiments within it.")
+    st.text("Enter the text you want to analyse here")
     st.text("")
     userText = st.text_input('User Input', placeholder='Input text HERE')
     st.text("")
